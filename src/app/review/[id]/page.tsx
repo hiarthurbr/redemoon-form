@@ -90,9 +90,7 @@ export default function CharacterFormEditor() {
     alert("Character data saved successfully!");
   };
   useEfect();
- {
-     const form =
- }
+
   const [id, setId] = useState<string | null>(null);
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [verticalLayout, setVerticalLayout] = useState(false);
