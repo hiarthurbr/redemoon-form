@@ -89,7 +89,6 @@ export default function CharacterFormEditor() {
     // Here you would typically send the data to your backend
     alert("Character data saved successfully!");
   };
-  useEfect();
 
   const [id, setId] = useState<string | null>(null);
   const [avatarLoaded, setAvatarLoaded] = useState(false);
