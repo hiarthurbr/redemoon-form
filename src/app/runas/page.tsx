@@ -15,52 +15,53 @@ import {
   Snippet,
 } from "@heroui/react";
 import { Trash2, GripVertical } from "lucide-react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 export default function Dashboard() {
   const [text, setText] = useState("");
   const [newCharacter, setNewCharacter] = useState("");
-  const [characters, setCharacters] = useState<
+  const [characters, setCharacters] = useLocalStorage<
     Array<{ input: string; output: string }>
-  >([
-    { input: String.raw`p`, output: String.raw`\\uE001` },
-    { input: String.raw`b`, output: String.raw`\\uE002` },
-    { input: String.raw`t`, output: String.raw`\\uE003` },
-    { input: String.raw`d`, output: String.raw`\\uE004` },
-    { input: String.raw`k`, output: String.raw`\\uE005` },
-    { input: String.raw`g`, output: String.raw`\\uE006` },
-    { input: String.raw`f`, output: String.raw`\\uE007` },
-    { input: String.raw`q`, output: String.raw`\\uE008` },
-    { input: String.raw`s`, output: String.raw`\\uE009` },
-    { input: String.raw`$`, output: String.raw`\\uE010` },
-    { input: String.raw`x`, output: String.raw`\\uE011` },
-    { input: String.raw`h`, output: String.raw`\\uE012` },
-    { input: String.raw`v`, output: String.raw`\\uE013` },
-    { input: String.raw`c`, output: String.raw`\\uE014` },
-    { input: String.raw`z`, output: String.raw`\\uE015` },
-    { input: String.raw`j`, output: String.raw`\\uE016` },
-    { input: String.raw`y`, output: String.raw`\\uE017` },
-    { input: String.raw`w`, output: String.raw`\\uE018` },
-    { input: String.raw`m`, output: String.raw`\\uE019` },
-    { input: String.raw`n`, output: String.raw`\\uE020` },
-    { input: String.raw`l`, output: String.raw`\\uE021` },
-    { input: String.raw`r`, output: String.raw`\\uE022` },
-    { input: String.raw`a`, output: String.raw`\\uE023` },
-    { input: String.raw`e`, output: String.raw`\\uE024` },
-    { input: String.raw`i`, output: String.raw`\\uE025` },
-    { input: String.raw`o`, output: String.raw`\\uE026` },
-    { input: String.raw`u`, output: String.raw`\\uE027` },
-    { input: String.raw`0`, output: String.raw`\\uE028` },
-    { input: String.raw`1`, output: String.raw`\\uE029` },
-    { input: String.raw`2`, output: String.raw`\\uE030` },
-    { input: String.raw`3`, output: String.raw`\\uE031` },
-    { input: String.raw`4`, output: String.raw`\\uE032` },
-    { input: String.raw`5`, output: String.raw`\\uE033` },
-    { input: String.raw`6`, output: String.raw`\\uE034` },
-    { input: String.raw`7`, output: String.raw`\\uE035` },
-    { input: String.raw`8`, output: String.raw`\\uE036` },
-    { input: String.raw`9`, output: String.raw`\\uE037` },
-    { input: String.raw` `, output: String.raw`\\uE000\\uE000` },
-    { input: String.raw`\n`, output: String.raw`\\n\\n` },
+  >("runas", [
+    { input: `p`, output: String.raw`\\uE001` },
+    { input: `b`, output: String.raw`\\uE002` },
+    { input: `t`, output: String.raw`\\uE003` },
+    { input: `d`, output: String.raw`\\uE004` },
+    { input: `k`, output: String.raw`\\uE005` },
+    { input: `g`, output: String.raw`\\uE006` },
+    { input: `f`, output: String.raw`\\uE007` },
+    { input: `q`, output: String.raw`\\uE008` },
+    { input: `s`, output: String.raw`\\uE009` },
+    { input: `$`, output: String.raw`\\uE010` },
+    { input: `x`, output: String.raw`\\uE011` },
+    { input: `h`, output: String.raw`\\uE012` },
+    { input: `v`, output: String.raw`\\uE013` },
+    { input: `c`, output: String.raw`\\uE014` },
+    { input: `z`, output: String.raw`\\uE015` },
+    { input: `j`, output: String.raw`\\uE016` },
+    { input: `y`, output: String.raw`\\uE017` },
+    { input: `w`, output: String.raw`\\uE018` },
+    { input: `m`, output: String.raw`\\uE019` },
+    { input: `n`, output: String.raw`\\uE020` },
+    { input: `l`, output: String.raw`\\uE021` },
+    { input: `r`, output: String.raw`\\uE022` },
+    { input: `a`, output: String.raw`\\uE023` },
+    { input: `e`, output: String.raw`\\uE024` },
+    { input: `i`, output: String.raw`\\uE025` },
+    { input: `o`, output: String.raw`\\uE026` },
+    { input: `u`, output: String.raw`\\uE027` },
+    { input: `0`, output: String.raw`\\uE028` },
+    { input: `1`, output: String.raw`\\uE029` },
+    { input: `2`, output: String.raw`\\uE030` },
+    { input: `3`, output: String.raw`\\uE031` },
+    { input: `4`, output: String.raw`\\uE032` },
+    { input: `5`, output: String.raw`\\uE033` },
+    { input: `6`, output: String.raw`\\uE034` },
+    { input: `7`, output: String.raw`\\uE035` },
+    { input: `8`, output: String.raw`\\uE036` },
+    { input: `9`, output: String.raw`\\uE037` },
+    { input: ` `, output: String.raw`\\uE000\\uE000` },
+    { input: `\n`, output: String.raw`\\n\\n` },
   ]);
   const [rightPanelWidth, setRightPanelWidth] = useState(50); // percentage
   const containerRef = useRef<HTMLDivElement>(null);
@@ -152,7 +153,7 @@ export default function Dashboard() {
                   />
                 </Tab>
                 <Tab key="result" title="Resultado">
-                  <Snippet className="size-full" hideSymbol>
+                  <Snippet className="size-full items-start" hideSymbol>
                     {text
                       .split("")
                       .map(
@@ -206,7 +207,11 @@ export default function Dashboard() {
                       className="flex items-center gap-2 p-3 bg-muted rounded-md"
                     >
                       <span className="font-medium min-w-[80px] truncate">
-                        {character.input}
+                        {character.input === "\n"
+                          ? String.raw`\n`
+                          : character.input === " "
+                            ? "*espaço*"
+                            : character.input}
                       </span>
                       <Input
                         placeholder="Description..."
