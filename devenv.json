@@ -1,0 +1,13 @@
+{
+  "$schema": "https://gist.githubusercontent.com/hiarthurbr/70943959bc52a3dd8afd79a3f9e79128/raw/4c613b23bd9a0e0f2841f3ad8e2d1496396bd632/nu-open-project-devenv-schema.json",
+  "packages": ["bun", "biome", "nodejs_18"],
+  "editor": "zeditor",
+  "commands": {
+    "install": "bun install",
+    "dev": "bun run dev"
+  },
+  "functions": {
+    "start": [[], "bun run build; bun run -b start"],
+    "add": [["string"], "bun add $_1"]
+  }
+}

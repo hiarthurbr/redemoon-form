@@ -166,7 +166,7 @@ export function DynamicList({
           <div className="flex items-center gap-2">
             {item.value !== "" && (
               <div
-                className="cursor-move p-1 hover:bg-muted rounded"
+                className="cursor-move p-1 hover:bg-muted rounded-sm"
                 title="Drag to reorder"
               >
                 <GripVertical className="h-4 w-4 text-muted-foreground" />

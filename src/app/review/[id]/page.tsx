@@ -26,12 +26,39 @@ import {
   Divider,
   Tooltip,
 } from "@heroui/react";
+
 import { z, type ZodSchema } from "zod";
+import { create } from "zustand";
 
 import humanId from "::lib/human-id";
 import { MarkdownEditor } from "::components/markdown-editor";
 import { MarkdownPreview } from "::components/markdown-preview";
 import { DynamicList } from "::components/dynamic-list";
+
+const useStore = create((set) => ({
+  // Sample Discord data (would be fetched from API in a real app)
+  discordCode: null,
+
+  // Editable fields with default values
+  minecraftJavaUsername: "Ar7hurz1nh0",
+  minecraftBedrockUsername: "Ar7hurz1nh0",
+  characterName: "Arthur",
+  age: 18,
+  gender: "Male",
+  pronouns: "He/Him",
+  sexuality: "Bisexual",
+  race: "Amethyst",
+  origin: "",
+  fearsList: [],
+  fears: "",
+  hobbiesAndInterests: "",
+  motivation: "",
+  personality: "",
+  hobbiesAndInterestsList: [],
+  motivationList: [],
+  personalityList: [],
+  originStory: "",
+}));
 
 const age_schema = z.coerce.number().int().gt(0);
 const list_item_schema = z.array(
@@ -52,8 +79,8 @@ export default function CharacterFormEditor() {
     discordId: "405943355781021696",
 
     // Editable fields with default values
-    minecraftUsername: "Ar7hurz1nh0",
-    isOriginalAccount: true,
+    minecraftJavaUsername: "Ar7hurz1nh0",
+    minecraftBedrockUsername: "Ar7hurz1nh0",
     characterName: "Arthur",
     age: 18,
     gender: "Male",
@@ -98,11 +125,7 @@ export default function CharacterFormEditor() {
   >({ bedrock: false, java: false });
 
   useEffect(() => {
-    setTimeout(
-      () =>
-        setId(humanId({ capitalize: false, separator: "-", addAdverb: true })),
-      3000,
-    );
+    setTimeout(() => setId(humanId()), 3000);
     window.addEventListener("resize", () =>
       setVerticalLayout(window.innerWidth < 768),
     );
@@ -116,6 +139,7 @@ export default function CharacterFormEditor() {
         <Snippet
           classNames={{ pre: "inline-flex items-center gap-4" }}
           disableCopy={id == null}
+          onCopy={() => setId(humanId())}
           symbol="#"
         >
           {id ?? (
@@ -148,7 +172,7 @@ export default function CharacterFormEditor() {
                 src={formData.discordProfileImage}
               />
               <Button
-                className="!mt-0 md:hidden"
+                className="mt-0! md:hidden"
                 color="danger"
                 size="lg"
                 variant="shadow"
@@ -237,7 +261,7 @@ export default function CharacterFormEditor() {
                   )}
                 />
                 <Button
-                  className="!mt-0 max-md:hidden"
+                  className="mt-0! max-md:hidden"
                   color="danger"
                   size="lg"
                   variant="shadow"
@@ -325,7 +349,7 @@ export default function CharacterFormEditor() {
                     </Button>
                     <User
                       avatarProps={{
-                        src: `https://mineskin.eu/avatar/${formData.minecraftUsername}/128.png`,
+                        src: `https://mineskin.eu/avatar/${formData.minecraftJavaUsername}/128.png`,
                         size: "lg",
                         radius: "sm",
                         as: Skeleton,
@@ -348,7 +372,7 @@ export default function CharacterFormEditor() {
                           isLoaded={id != null}
                           className="rounded-large my-0.5"
                         >
-                          {formData.minecraftUsername}
+                          {formData.minecraftJavaUsername}
                         </Skeleton>
                       }
                     />
@@ -368,7 +392,7 @@ export default function CharacterFormEditor() {
                         inputWrapper:
                           "data-[hover=true]:bg-success-100 group-data-[focus=true]:bg-success-100",
                       }}
-                      value={formData.minecraftUsername}
+                      value={formData.minecraftJavaUsername}
                       onValueChange={handleFormChange("minecraftUsername")}
                     />
                     <Alert

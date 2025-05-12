@@ -1,5 +1,5 @@
 // Listas de palavras para gênero masculino
-export const adjetivosM: string[] = [
+export const adjetivosM = [
   "rápido",
   "forte",
   "brilhante",
@@ -16,9 +16,135 @@ export const adjetivosM: string[] = [
   "decidido",
   "destemido",
   "vigoroso",
-];
+  "agradável",
+  "duro",
+  "mau",
+  "alegre",
+  "enorme",
+  "antigo",
+  "querido",
+  "famoso",
+  "generoso",
+  "grande",
+  "incrível",
+  "brilhante",
+  "velho",
+  "jovem",
+  "maior",
+] as const satisfies string[];
 
-export const substantivosM: string[] = [
+export const substantivosM = [
+  "aço",
+  "exército",
+  "papel",
+  "álcool",
+  "escorpião",
+  "pastor",
+  "algodão",
+  "espelho",
+  "patriarca",
+  "amanhecer",
+  "filósofo",
+  "pente",
+  "amor",
+  "garoto",
+  "peixe",
+  "apartamento",
+  "pássaro",
+  "verão",
+  "arco-íris",
+  "fracasso",
+  "planeta",
+  "armário",
+  "geólogo",
+  "púlpito",
+  "assento",
+  "boné",
+  "rim",
+  "azeite",
+  "edifício",
+  "panteão",
+  "banco",
+  "pardal",
+  "roupeiro",
+  "barro",
+  "fígado",
+  "saber",
+  "bloco",
+  "muro",
+  "piano",
+  "caixão",
+  "homem",
+  "saleiro",
+  "caleidoscópio",
+  "tijolo",
+  "sapo",
+  "calibrador",
+  "louro",
+  "satélite",
+  "camarão",
+  "lavabo",
+  "sentido",
+  "camelo",
+  "controle",
+  "senhor",
+  "campeão",
+  "livro",
+  "solo",
+  "campo",
+  "macho",
+  "cigarro",
+  "câncer",
+  "manuscrito",
+  "tanque",
+  "candelabro",
+  "cacho",
+  "teto",
+  "capataz",
+  "fogareiro",
+  "teclado",
+  "carro",
+  "melão",
+  "telhado",
+  "castelo",
+  "mercado",
+  "telefone",
+  "cavaleiro",
+  "fio",
+  "salário",
+  "cemitério",
+  "microscópio",
+  "terreno",
+  "cimento",
+  "monte",
+  "território",
+  "computador",
+  "joão-de-barro",
+  "vaso",
+  "dinheiro",
+  "pau",
+  "vidro",
+  "dólar",
+  "blusão",
+  "volume",
+  "gaúcho",
+  "país",
+  "ventilador",
+  "gramado",
+  "menino",
+  "barão",
+  "óculos",
+  "fósforo",
+  "chão",
+  "porco",
+  "urso",
+  "copo",
+  "sebo",
+  "metal",
+  "telescópio",
+  "xadrez",
+  "endoscópio",
+  "pacote",
   "tigre",
   "leão",
   "carro",
@@ -35,10 +161,10 @@ export const substantivosM: string[] = [
   "sonho",
   "mar",
   "rio",
-];
+] as const satisfies string[];
 
 // Listas de palavras para gênero feminino
-export const adjetivosF: string[] = [
+export const adjetivosF = [
   "rápida",
   "forte",
   "brilhante",
@@ -55,15 +181,143 @@ export const adjetivosF: string[] = [
   "decidida",
   "destemida",
   "vigorosa",
-];
+  "agradável",
+  "dura",
+  "alegre",
+  "enorme",
+  "pequena",
+  "antiga",
+  "famosa",
+  "generosa",
+  "simpática",
+  "grande",
+  "honesta",
+  "sincera",
+  "incrível",
+  "brilhante",
+  "jovem",
+  "maior",
+] as const satisfies string[];
 
-export const substantivosF: string[] = [
+export const substantivosF = [
+  "agenda",
+  "doçura",
+  "navalha",
+  "ambulância",
+  "escritora",
+  "menina",
+  "amiga",
+  "espécie",
+  "paixão",
+  "antena",
+  "estátua",
+  "pérola",
+  "antropóloga",
+  "estrela",
+  "pesca",
+  "aranha",
+  "filosofia",
+  "pedra",
+  "arquitetura",
+  "flauta",
+  "pintura",
+  "azaleia",
+  "flor",
+  "pinça",
+  "bacia",
+  "mitologia",
+  "janela",
+  "biblioteca",
+  "floricultura",
+  "pipa",
+  "bicicleta",
+  "geometria",
+  "placa",
+  "bolsa",
+  "borracha",
+  "poesia",
+  "borda",
+  "borboleta",
+  "torta",
+  "buzina",
+  "guloseima",
+  "placenta",
+  "calculadora",
+  "lanterna",
+  "toalha",
+  "cama",
+  "mulher",
+  "sapataria",
+  "camiseta",
+  "almofada",
+  "polícia",
+  "capela",
+  "graxa",
+  "régua",
+  "cara",
+  "guitarra",
+  "reunião",
+  "carteira",
+  "formiga",
+  "revista",
+  "casa",
+  "igreja",
+  "cadeira",
+  "colcha",
+  "lã",
+  "sopa",
+  "colheita",
+  "professora",
+  "tubulação",
+  "colher",
+  "motocicleta",
+  "cobra",
+  "colmeia",
+  "caneta",
+  "batina",
+  "comida",
+  "lata",
+  "tina",
+  "companheira",
+  "grama",
+  "tinta",
+  "corda",
+  "mola",
+  "vida",
+  "coroa",
+  "lupa",
+  "empada",
+  "crise",
+  "geleia",
+  "urna",
+  "dama",
+  "boneca",
+  "sandália",
+  "doutora",
+  "música",
+  "canjica",
+  "gravata",
+  "chave",
+  "tormenta",
+  "habilidade",
+  "mesa",
+  "porca",
+  "janta",
+  "lâmpada",
+  "sombra",
+  "metralhadora",
+  "canela",
+  "oportunidade",
+  "tampa",
+  "amora",
+  "verdura",
   "leoa",
   "pantera",
   "casa",
   "máquina",
   "flor",
   "estrela",
+  "máquina",
   "invenção",
   "cidade",
   "lua",
@@ -74,10 +328,176 @@ export const substantivosF: string[] = [
   "arte",
   "melodia",
   "ideia",
-];
+  "nuvem",
+  "terra",
+  "porta",
+  "rua",
+  "avenida",
+  "montanha",
+  "cachoeira",
+  "lagoa",
+  "floresta",
+  "riviera",
+  "praia",
+  "onda",
+  "ilha",
+  "brisa",
+  "chuva",
+  "tempestade",
+  "neve",
+  "geada",
+  "fogueira",
+  "chama",
+  "centelha",
+  "faísca",
+  "escuridão",
+  "luz",
+  "névoa",
+  "poeira",
+  "lama",
+  "areia",
+  "rocha",
+  "abelha",
+  "joaninha",
+  "mosca",
+  "vespa",
+  "lagarta",
+  "minhoca",
+  "lesma",
+  "lagartixa",
+  "salamandra",
+  "tartaruga",
+  "arara",
+  "coruja",
+  "águia",
+  "gaivota",
+  "pata",
+  "galinha",
+  "pomba",
+  "baleia",
+  "orca",
+  "tubarão",
+  "arraia",
+  "sardinha",
+  "enguia",
+  "lula",
+  "esponja",
+  "ostra",
+  "concha",
+  "alga",
+  "lagosta",
+  "bactéria",
+  "célula",
+  "parede",
+  "organela",
+  "bolha",
+  "temperatura",
+  "sensação",
+  "criança",
+  "moça",
+  "senhora",
+  "avó",
+  "mãe",
+  "filha",
+  "irmã",
+  "prima",
+  "tia",
+  "sobrinha",
+  "neta",
+  "cônjuge",
+  "esposa",
+  "namorada",
+  "colega",
+  "vizinha",
+  "estranha",
+  "conhecida",
+  "desconhecida",
+  "pessoa",
+  "criatura",
+  "alma",
+  "mente",
+  "editora",
+  "livraria",
+  "papelaria",
+  "hora",
+  "semana",
+  "década",
+  "eternidade",
+  "época",
+  "era",
+  "fase",
+  "estação",
+  "primavera",
+  "madrugada",
+  "manhã",
+  "tarde",
+  "noite",
+  "alvorada",
+  "aurora",
+  "penumbra",
+  "continuação",
+  "pausa",
+  "escola",
+  "faculdade",
+  "universidade",
+  "família",
+  "moradia",
+  "residência",
+  "mansão",
+  "chácara",
+  "fazenda",
+  "roça",
+  "aldeia",
+  "galáxia",
+  "constelação",
+  "nebulosa",
+  "atmosfera",
+  "biosfera",
+  "hidrosfera",
+  "litosfera",
+  "geografia",
+  "geologia",
+  "biologia",
+  "química",
+  "física",
+  "matemática",
+  "sociologia",
+  "antropologia",
+  "psicologia",
+  "economia",
+  "política",
+  "medicina",
+  "engenharia",
+  "escultura",
+  "dança",
+  "fotografia",
+  "crônica",
+  "novela",
+  "resenha",
+  "crítica",
+  "biografia",
+  "autobiografia",
+  "carta",
+  "mensagem",
+  "notificação",
+  "ligação",
+  "conversa",
+  "voz",
+  "harmonia",
+  "cirurgia",
+  "terapia",
+  "cura",
+  "vacina",
+  "epidemia",
+  "pandemia",
+  "parasita",
+  "testemunha",
+  "vítima",
+  "inocente",
+] as const satisfies string[];
 
 // Verbos e advérbios (os verbos não sofrem variação de gênero)
-export const verbos: string[] = [
+export const verbos = [
   "correr",
   "voar",
   "brilhar",
@@ -88,19 +508,79 @@ export const verbos: string[] = [
   "transformar",
   "encantar",
   "inspirar",
-];
+  "amar",
+  "estudar",
+  "chegar",
+  "pensar",
+  "viver",
+  "voltar",
+  "pegar",
+  "escrever",
+  "conhecer",
+  "aprender",
+  "esquecer",
+  "vender",
+  "proteger",
+  "nascer",
+  "morrer",
+  "lutar",
+  "brincar",
+  "cantar",
+  "criar",
+  "sonhar",
+  "mudar",
+  "vencer",
+  "crescer",
+  "saltar",
+  "navegar",
+  "gritar",
+  "partir",
+  "subir",
+  "descer",
+] as const satisfies string[];
 
-export const adverbios: string[] = [
+export const adverbios = [
   "rapidamente",
   "suavemente",
   "elegantemente",
   "destemidamente",
   "vigorosamente",
-];
+  "alegremente",
+  "tranquilamente",
+  "discretamente",
+  "honestamente",
+  "simplesmente",
+  "calmamente",
+  "facilmente",
+  "diariamente",
+  "raramente",
+  "violentamente",
+  "apressadamente",
+  "cuidadosamente",
+  "delicadamente",
+  "pacientemente",
+  "atenciosamente",
+  "silenciosamente",
+  "felizmente",
+  "fortemente",
+  "lentamente",
+  "tristemente",
+] as const satisfies string[];
+
+import { createHash, getHashes } from "crypto";
 
 // Função que retorna um elemento aleatório de um array
-function random(arr: string[]): string {
-  return arr[Math.floor(Math.random() * arr.length)];
+function random<T extends {}>(
+  arr: [T, ...T[]],
+  offset: number = 0,
+): T & { index: number } {
+  const length = arr.length;
+  const index = Math.floor(Math.random() * length);
+  const choice = arr[(index + offset) % length];
+
+  return Object.assign(choice, {
+    index,
+  }) as T & { index: number };
 }
 
 /**
@@ -121,19 +601,19 @@ function conjugate(verb: string): string {
  */
 export interface Options {
   /**
-   * Separador para juntar as partes da frase (padrão: espaço " ").
+   * Separador para juntar as partes da frase (padrão: "-").
    */
   separator?: string;
   /**
-   * Quantidade de adjetivos (padrão: 1).
+   * Quantidade de adjetivos (padrão: 2).
    */
-  adjetivoCount?: number;
+  adjetivoCount?: 0 | 1 | 2;
   /**
-   * Se deve incluir um advérbio no final (padrão: false).
+   * Se deve incluir um advérbio no final (padrão: true).
    */
   addAdverb?: boolean;
   /**
-   * Se a frase deve iniciar com letra maiúscula (padrão: true).
+   * Se a frase deve iniciar com letra maiúscula (padrão: false).
    */
   capitalize?: boolean;
   /**
@@ -159,16 +639,19 @@ export interface Options {
 export function identificadorHumano(options: Options = {}): string {
   const {
     separator = "-",
-    adjetivoCount = 1,
-    addAdverb = false,
-    capitalize = true,
+    adjetivoCount = 2,
+    addAdverb = true,
+    capitalize = false,
     article = "aleatorio",
   } = options;
 
   // Define o artigo e escolhe as listas de adjetivos e substantivos de acordo com o gênero.
+  const hash = createHash("sha1", { outputLength: 32 });
+
+  console.log(getHashes());
   let art: string;
-  let adjsList: string[];
-  let subsList: string[];
+  let adjsList: [string, ...string[]];
+  let subsList: [string, ...string[]];
 
   if (article === "masculino") {
     art = "o";
@@ -194,12 +677,23 @@ export function identificadorHumano(options: Options = {}): string {
   // Seleciona os adjetivos
   const adjs: string[] = [];
 
+  let offset = 0;
+
   for (let i = 0; i < adjetivoCount; i++) {
-    adjs.push(random(adjsList));
+    const choice = random(adjsList, offset);
+
+    adjs.push(choice);
+    hash.update(choice.toString());
+    offset = choice.index;
+    if (i < adjetivoCount - 1) adjs.push("e");
   }
   const substantivo = random(subsList);
   const verboInf = random(verbos);
   const verboConj = conjugate(verboInf);
+
+  hash.update(substantivo.toString());
+  hash.update(verboInf.toString());
+  hash.update(verboConj.toString());
 
   // Monta a frase usando o separador customizado
   const partes = [art, adjs.join(separator), substantivo, verboConj];
@@ -207,12 +701,26 @@ export function identificadorHumano(options: Options = {}): string {
   if (addAdverb) {
     partes.push(random(adverbios));
   }
+
+  const algos = [];
+  for (const algo of getHashes()) {
+    try {
+      const hash = createHash(algo, { outputLength: 4 });
+      for (const dig of partes) hash.update(dig.toString());
+      const dig = hash.digest("binary").length;
+      algos.push(dig);
+      console.log(algo, dig, dig * 8);
+    } catch {}
+  }
+  console.log(algos, Math.min(...algos));
   let frase = partes.join(separator);
 
   if (capitalize) {
     frase = frase.charAt(0).toUpperCase() + frase.slice(1);
   }
 
+  const hash_ = hash.digest("binary");
+  // return [frase, parseInt(hash_, 16), hash_, hash_.length];
   return frase;
 }
 
