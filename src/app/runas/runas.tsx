@@ -211,7 +211,7 @@ export default function Dashboard() {
                       }}
                       hideSymbol
                     >
-                      {`/tellraw ${target} {"text":"${obfuscated}","font":"runas"}`}
+                      {`/tellraw ${target} {"text":"${obfuscated.replaceAll(String.raw`\\`, "\\")}","font":"runas"}`}
                     </Snippet>
                   </div>
                   <div className="space-y-2">
