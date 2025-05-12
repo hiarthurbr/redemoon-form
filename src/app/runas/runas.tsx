@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 import {
   Textarea,
   Button,
@@ -133,10 +133,29 @@ export default function Dashboard() {
     };
   }, []);
 
-  return (
-    <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">Simple Dashboard</h1>
+  const [target, setTarget] = (globalThis.window ? useLocalStorage : useState)(
+    "target",
+    "@s",
+  );
+  const [author, setAuthor] = (globalThis.window ? useLocalStorage : useState)(
+    "author",
+    "Caetano Veloso",
+  );
+  const [title, setTitle] = (globalThis.window ? useLocalStorage : useState)(
+    "title",
+    "Dialogo",
+  );
+  const obfuscated = text
+    .split("")
+    .map(
+      (c) =>
+        characters.find(({ input }) => c.toLowerCase() === input)?.output ??
+        "?",
+    )
+    .join("");
 
+  return (
+    <>
       <div ref={containerRef} className="flex relative h-[600px]">
         {/* Left side - Text Area */}
         <div className="flex-1" style={{ width: `${100 - rightPanelWidth}%` }}>
@@ -157,17 +176,65 @@ export default function Dashboard() {
                   />
                 </Tab>
                 <Tab key="result" title="Resultado">
-                  <Snippet className="size-full items-start" hideSymbol>
-                    {text
-                      .split("")
-                      .map(
-                        (c) =>
-                          characters.find(
+                  <Snippet
+                    className="items-start"
+                    classNames={{ content: "break-keep", pre: "size-full" }}
+                    hideSymbol
+                  >
+                    <>
+                      {text.split("").map((c, i) => (
+                        <Fragment key={`${c}-${i}`}>
+                          {characters.find(
                             ({ input }) => c.toLowerCase() === input,
-                          )?.output ?? "?",
-                      )
-                      .join("")}
+                          )?.output ?? "?"}
+                          <wbr />
+                        </Fragment>
+                      ))}
+                    </>
                   </Snippet>
+                </Tab>
+                <Tab
+                  key="commands"
+                  title="Comandos"
+                  className="flex flex-col gap-2"
+                >
+                  <div className="space-y-2">
+                    <h2>Tellraw</h2>
+                    <Input
+                      label="Target"
+                      value={target}
+                      onValueChange={setTarget}
+                    />
+                    <Snippet
+                      classNames={{
+                        pre: "text-ellipsis overflow-hidden max-w-xl",
+                      }}
+                      hideSymbol
+                    >
+                      {`/tellraw ${target} {"text":"${obfuscated}","font":"runas"}`}
+                    </Snippet>
+                  </div>
+                  <div className="space-y-2">
+                    <h2>Criar Livro</h2>
+                    <Input
+                      label="Title"
+                      value={title}
+                      onValueChange={setTitle}
+                    />
+                    <Input
+                      label="Autor"
+                      value={author}
+                      onValueChange={setAuthor}
+                    />
+                    <Snippet
+                      classNames={{
+                        pre: "text-ellipsis overflow-hidden max-w-xl",
+                      }}
+                      hideSymbol
+                    >
+                      {`/minecraft:give @s written_book[written_book_content={title:"${title}",author:"${author}",pages:['{"text":"${obfuscated}","font":"runas"}']}] 1`}
+                    </Snippet>
+                  </div>
                 </Tab>
               </Tabs>
             </CardBody>
@@ -212,7 +279,7 @@ export default function Dashboard() {
                     >
                       <span className="font-medium min-w-[80px] truncate">
                         {character.input === "\n"
-                          ? String.raw`\n`
+                          ? "*enter*"
                           : character.input === " "
                             ? "*espaço*"
                             : character.input}
@@ -241,6 +308,6 @@ export default function Dashboard() {
           </Card>
         </div>
       </div>
-    </main>
+    </>
   );
 }
