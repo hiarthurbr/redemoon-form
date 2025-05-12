@@ -70,7 +70,9 @@ export default function Dashboard() {
       { input: `\n`, output: String.raw`\\n\\n` },
     ],
   );
-  const [rightPanelWidth, setRightPanelWidth] = useState(50); // percentage
+  const [rightPanelWidth, setRightPanelWidth] = (
+    globalThis.window ? useLocalStorage : useState
+  )("rightPanelWidth", 50); // percentage
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
   const startXRef = useRef(0);
