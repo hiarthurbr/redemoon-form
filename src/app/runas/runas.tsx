@@ -18,7 +18,10 @@ import { Trash2, GripVertical } from "lucide-react";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
 export default function Dashboard() {
-  const [text, setText] = useState("");
+  const [text, setText] = (globalThis.window ? useLocalStorage : useState)(
+    "text",
+    "",
+  );
   const [newCharacter, setNewCharacter] = useState("");
   const [characters, setCharacters] = (
     globalThis.window ? useLocalStorage : useState
