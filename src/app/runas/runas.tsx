@@ -17,6 +17,38 @@ import {
 import { Trash2, GripVertical } from "lucide-react";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
+const text_styles = {
+  dark_red: { symbol: Symbol("§4"), chat: "§4", unicode: String.raw`\u00A74` },
+  red: { symbol: Symbol("§c"), chat: "§c", unicode: String.raw`\u00A7c` },
+  gold: { symbol: Symbol("§6"), chat: "§6", unicode: String.raw`\u00A76` },
+  yellow: { symbol: Symbol("§e"), chat: "§e", unicode: String.raw`\u00A7e` },
+  dark_green: {
+    symbol: Symbol("§2"),
+    chat: "§2",
+    unicode: String.raw`\u00A72`,
+  },
+  green: { symbol: Symbol("§a"), chat: "§a", unicode: String.raw`\u00A7a` },
+  aqua: { symbol: Symbol("§b"), chat: "§b", unicode: String.raw`\u00A7b` },
+  dark_aqua: { symbol: Symbol("§3"), chat: "§3", unicode: String.raw`\u00A73` },
+  dark_blue: { symbol: Symbol("§1"), chat: "§1", unicode: String.raw`\u00A71` },
+  blue: { symbol: Symbol("§9"), chat: "§9", unicode: String.raw`\u00A79` },
+  light_purple: {
+    symbol: Symbol("§d"),
+    chat: "§d",
+    unicode: String.raw`\u00A7d`,
+  },
+  dark_purple: {
+    symbol: Symbol("§5"),
+    chat: "§5",
+    unicode: String.raw`\u00A75`,
+  },
+  white: { symbol: Symbol("§f"), chat: "§f", unicode: String.raw`\u00A7f` },
+  gray: { symbol: Symbol("§7"), chat: "§7", unicode: String.raw`\u00A77` },
+  dark_gray: { symbol: Symbol("§8"), chat: "§8", unicode: String.raw`\u00A78` },
+  black: { symbol: Symbol("§0"), chat: "§0", unicode: String.raw`\u00A70` },
+  reset: { symbol: Symbol("§r"), chat: "§r", unicode: String.raw`\u00A7r` },
+};
+
 export default function Dashboard() {
   const [text, setText] = (globalThis.window ? useLocalStorage : useState)(
     "text",
