@@ -212,24 +212,6 @@ export default function Dashboard() {
                     disableAutosize
                   />
                 </Tab>
-                <Tab key="result" title="Resultado">
-                  <Snippet
-                    className="items-start"
-                    classNames={{ content: "break-keep", pre: "size-full" }}
-                    hideSymbol
-                  >
-                    <>
-                      {text.split("").map((c, i) => (
-                        <Fragment key={`${c}-${i}`}>
-                          {characters.find(
-                            ({ input }) => c.toLowerCase() === input,
-                          )?.output ?? "?"}
-                          <wbr />
-                        </Fragment>
-                      ))}
-                    </>
-                  </Snippet>
-                </Tab>
                 <Tab
                   key="commands"
                   title="Comandos"
@@ -246,7 +228,7 @@ export default function Dashboard() {
                       classNames={{
                         pre: "text-ellipsis overflow-hidden max-w-xl",
                       }}
-                      hideSymbol
+                      symbol="/"
                     >
                       {`/tellraw ${target} {"text":"${obfuscated.replaceAll(String.raw`\\`, "\\")}","font":"runas"}`}
                     </Snippet>
@@ -267,7 +249,7 @@ export default function Dashboard() {
                       classNames={{
                         pre: "text-ellipsis overflow-hidden max-w-xl",
                       }}
-                      hideSymbol
+                      symbol="/"
                     >
                       {`/minecraft:give @s written_book[written_book_content={title:"${title}",author:"${author}",pages:['{"text":"${obfuscated}","font":"runas"}']}] 1`}
                     </Snippet>
