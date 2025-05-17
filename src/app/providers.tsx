@@ -5,7 +5,7 @@ import type { ThemeProviderProps } from "next-themes";
 import { HeroUIProvider } from "@heroui/system";
 import { useRouter } from "next/navigation";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -23,7 +23,9 @@ declare module "@react-types/shared" {
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 
-  const [from_to] = useState(() => {
+  const [from_to, setBg] = useState<string[]>([]);
+
+  useEffect(() => {
     const from = [
       "from-red-500",
       "from-orange-500",
@@ -73,15 +75,15 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       "to-stone-500",
     ];
 
-    return [
+    setBg([
       "bg-gradient-to-br",
       from[Math.floor(Math.random() * from.length)],
       to[Math.floor(Math.random() * to.length)],
-    ];
-  });
+    ]);
+  }, []);
 
   return (
-    <HeroUIProvider navigate={router.push} className={from_to.join(" ")}>
+    <HeroUIProvider className={from_to.join(" ")} navigate={router.push}>
       <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
     </HeroUIProvider>
   );
